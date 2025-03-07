@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered symptom checker - Get instant insights about your health symptoms and possible conditions">
+    <title>MediSense AI | Intelligent Symptom Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
+    <!-- Add Font Awesome for medical icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Cookie Consent Banner -->
+        <div class="cookie-consent" id="cookieConsent">
+            <p>This website uses cookies to ensure you get the best experience. By continuing to use this site, you accept our use of cookies.</p>
+            <button onclick="acceptCookies()">Accept</button>
+            <a href="privacy.html">Learn More</a>
+        </div>
+
+        <div class="background-pattern"></div>
+
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="images/2025030122275204.png" alt="Agentura Logo" class="logo-img">
+                    <span>Agentura</span>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container">
+            <div class="main-content">
+                <div class="hero-section">
+                    <h1 class="brand-title">
+                        <span class="medisense-text">MediSense</span>
+                        <i class="fas fa-heartbeat hero-heart"></i>
+                    </h1>
+                </div>
+
+                <div class="instruction-text">
+                    <div class="info-badge">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Please select at least 2 symptoms for accurate analysis</p>
+                    </div>
+                </div>
+
+                <div class="disclaimer">
+                    <div class="alert-box">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>This tool provides general information only and should not replace professional medical advice. Always consult a healthcare provider for diagnosis and treatment.</p>
+                    </div>
+                </div>
+
+                <div class="symptom-input">
+                    <h2><i class="fas fa-notes-medical"></i> What symptoms are you experiencing?</h2>
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input 
+                            type="text" 
+                            id="symptomSearch" 
+                            placeholder="Type your symptoms here (e.g., Headache, Ear Pain...)" 
+                            aria-label="Search symptoms"
+                        >
+                        <div id="symptomsList" class="symptoms-list" role="listbox"></div>
+                    </div>
+                    
+                    <div id="selectedSymptoms" class="selected-symptoms">
+                        <h3><i class="fas fa-clipboard-list"></i> Selected Symptoms</h3>
+                        <div id="selectedSymptomsList" role="list"></div>
+                    </div>
+                    
+                    <button onclick="checkSymptoms()" class="primary-button">
+                        <i class="fas fa-microscope"></i>
+                        Analyze Symptoms
+                    </button>
+                </div>
+
+                <div class="result" id="result">
+                    <h3><i class="fas fa-chart-bar"></i> Possible Conditions:</h3>
+                    <div id="conditions" class="conditions-list">
+                        <!-- Example of how conditions should be structured (will be populated by JavaScript) -->
+                        <div class="condition-card">
+                            <h3 class="condition-name">
+                                <i class="fas fa-heartbeat"></i>
+                                Example Condition
+                            </h3>
+                            <span class="condition-probability">85% Match</span>
+                            <p class="condition-description">This is an example description of the condition that explains what it is and its general characteristics.</p>
+                            <div class="condition-symptoms">
+                                <h4><i class="fas fa-list"></i> Common Symptoms</h4>
+                                <div class="symptoms-list">
+                                    <span class="symptom-tag">Symptom 1</span>
+                                    <span class="symptom-tag">Symptom 2</span>
+                                    <span class="symptom-tag">Symptom 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="medical-disclaimer">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>Important: This is not a diagnosis. Please consult with a healthcare professional for proper medical advice.</p>
+                    </div>
+                </div>
+
+                <div id="loader" class="loader">
+                    <div class="spinner"></div>
+                    <p>Analyzing symptoms...</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-info-circle"></i> About Us</h4>
+                    <p>MediSense AI provides advanced health analysis to help you understand your symptoms better using cutting-edge artificial intelligence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fas fa-gavel"></i> Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="disclaimer.html">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fas fa-envelope"></i> Contact</h4>
+                    <p>Email: agenturacontact@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Agentura. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="cursor-effects.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+</body>
+</html> 
